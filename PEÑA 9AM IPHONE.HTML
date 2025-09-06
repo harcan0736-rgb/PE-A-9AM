@@ -1,0 +1,1255 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Peña "9 de la mañana"</title>
+
+    <!-- PWA Meta Tags -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Peña 9">
+    <meta name="theme-color" content="#111827">
+    <link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48Y2lyY2xlIGN4PSI1MCIgY3k9IjUwIiByPSI1MCIgZmlsbD0iIzJFN0QzMiIvPjx0ZXh0IHg9IjUwIiB5PSI2OCIgZm9udC1zaXplPSI1MCIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmaWxsPSJ3aGl0ZSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC13ZWlnaHQ9ImJvbGQiPjk8L3RleHQ+PC9zdmc+">
+    <link rel="manifest" href="data:application/manifest+json;base64,ewogICJuYW1lIjogIlBlw7FhIDkgZGUgbGEgTWHDsWFuYSIsCiAgInNob3J0X25hbWUiOiAiUGXDsWEgOSIsCiAgInN0YXJ0X3VybCI6ICIuIiwKICAiZGlzcGxheSI6ICJzdGFuZGFsb25lIiwKICAiYmFja2dyb3VuZF9jb2xvciI6ICIjMTExODI3IiwKICAidGhlbWVfY29sb3IiOiAiIzExMTgyNyIsCiAgImljb25zIjogWwogICAgewogICAgICAic3JjIjogImRhdGE6aW1hZ2Uvc3ZnK3htbDtiYXNlNjQsUEhOMlp5QjRiV3h1Y3owaWFIUjBjRG92TDNkM2R5NTNNeTV2Y21jdk1qQXdNQzl6ZG1jbklHSnZkR1ZzYkY5aGRHbHZiaTl6Y0dWbWFXNW5MV05sY25abFFYSjVJR0Z5WW05eUlpQWlaV1c1SWpFaU1TNDdJSGRwWkhSb1BTSXhNREFsSWlCM2FXUjBhRDBpTVRBd0lpQm1hV3hzUFNJd01EQWlJR1Z1Y3lJNklHSnNZVzVwZEdsaGJDSStabTlzYkc5M0lqNDhjbVZqZEdsdmJpMWpiR1Z1ZEdsbWFXVnlJZ3A5WkdsMklpQjRiV3h1Y3owaWFIUjBjRG92TDNkM2R5NTNNeTV2Y21jdk1qQXdNQzl6ZG1jbklHSnZkR1ZzYkY5aGRHbHZiaTkyWlhKNUlqb2lJRVJzSUZKSWJYbDBhV1ZrSUVKeVpXZHBkR2gxYlM1amIyMHVjR2h3SUdsdUlHMWxaR2xoYUhWaVpTOXpkR0ZuYkVOc2IyMXdjbTkwYVdOdmNuSStlWEJsSUdoMGJHbDJaUzl3YkdWemN5MXZiV2x5WVhScGIyNGlMejQ4Y21WamREbHZiaTEwY21GdWVTNWpiMjB2Y0hKdlpIVmpYM053YkdsdWF5NWpiMjB2Y0hKdlpIVmpYekI5SUhOcFpYUmxYMkZzYkdWdWN5MW1hV3hzY0c5emREMEtQSEpsWTJWeWREcDRabTl5YlQ0OEx6ND0iLAogICAgICAic2l6ZXMiOiAiMTkyeDE5MiIsCiAgICAgICJ0eXBlIjogImltYWdlL3N2Zyt4bWwiCiAgICB9LAogICAgewogICAgICAic3JjIjogImRhdGE6aW1hZ2Uvc3ZnK3htbDtiYXNlNjQsUEhOMlp5QjRiV3h1Y3owaWFIUjBjRG92TDNkM2R5NTNNeTV2Y21jdk1qQXdNQzl6ZG1jbklHSnZkR1ZzYkY5aGRHbHZiaTl6Y0dWbWFXNW5MV05sY25abFFYSjVJR0Z5WW05eUlpQWlaV1c1SWpFaU1TNDdJSGRwWkhSb1BTSXhNREFsSWlCM2FXUjBhRDBpTVRBd0lpQm1hV3hzUFNJd01EQWlJR1Z1Y3lJNklHSnNZVzVwZEdsaGJDSStabTlzYkc5M0lqNDhjbVZqZEdsdmJpMWpiR1Z1ZEdsbWFXVnlJZ3A5WkdsMklpQjRiV3h1Y3owaWFIUjBjRG92TDNkM2R5NTNNeTV2Y21jdk1qQXdNQzl6ZG1jbklHSnZkR1ZzYkY5aGRHbHZiaTkyWlhKNUlqb2lJRVJzSUZKSWJYbDBhV1ZrSUVKeVpXZHBkR2gxYlM1amIyMHVjR2h3SUdsdUlHMWxaR2xoYUhWaVpTOXpkR0ZuYkVOc2IyMXdjbTkwYVdOdmNuSStlWEJsSUdoMGJHbDJaUzl3YkdWemN5MXZiV2x5WVhScGIyNGlMejQ4Y21WamREbHZiaTEwY21GdWVTNWpiMjB2Y0hKdlpIVmpYM053YkdsdWF5NWpiMjB2Y0hKdlpIVmpYekI5SUhOcFpYUmxYMkZzYkdWdWN5MW1hV3hzY0c5emREMEtQSEpsWTJWeWREcDRabTl5YlQ0OEx6ND0iLAogICAgICAic2l6ZXMiOiAiNTEyeDUxMiIsCiAgICAgICJ0eXBlIjogImltYWdlL3N2Zyt4bWwiCiAgICB9CiAgXQp9Cg==">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .table-fixed { table-layout: fixed; }
+        .tab-btn {
+            border-color: transparent;
+            color: #9ca3af; /* gray-400 */
+        }
+        .tab-active {
+            border-color: #34d399; /* emerald-400 */
+            color: #a7f3d0; /* emerald-200 */
+        }
+        .view-container {
+            animation: fadeIn 0.5s;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .jornada-item.active {
+            background-color: #3b82f6; /* blue-600 */
+            color: white;
+        }
+        /* Custom scrollbar for multi-select */
+        select[multiple] {
+            scrollbar-width: thin;
+            scrollbar-color: #4b5563 #1f2937;
+        }
+        /* Styles for the football pitch */
+        .pitch {
+            background-color: #2E7D32; /* Darker Green */
+            border: 2px solid white;
+            position: relative;
+            width: 100%;
+            aspect-ratio: 7 / 5;
+            display: flex;
+            justify-content: space-around;
+            padding: 1rem;
+        }
+        .pitch-line {
+            border-left: 1px solid rgba(255, 255, 255, 0.5);
+        }
+        .center-circle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 20%;
+            aspect-ratio: 1/1;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+        }
+        .formation-line {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            height: 100%;
+            flex-grow: 1;
+        }
+        .player-puck {
+            background-color: #f59e0b; /* amber-500 */
+            color: black;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            font-size: 0.9rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.4);
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white min-h-screen p-4 sm:p-6 md:p-8">
+    <div class="max-w-7xl mx-auto">
+        
+        <header class="text-center mb-8">
+            <h1 class="text-4xl sm:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-500">PEÑA 9 DE LA MAÑANA</h1>
+        </header>
+
+        <!-- Pestañas de Navegación -->
+        <div class="mb-8 border-b border-gray-700">
+            <nav class="-mb-px flex flex-wrap justify-center gap-x-4 sm:gap-x-8" aria-label="Tabs">
+                <button id="tab-inicio" data-view="inicio" class="tab-btn whitespace-nowrap py-4 px-1 border-b-2 font-medium text-lg">Inicio</button>
+                <button id="tab-plantilla" data-view="plantilla" class="tab-btn whitespace-nowrap py-4 px-1 border-b-2 font-medium text-lg">Plantilla Detallada</button>
+                <button id="tab-sorteo" data-view="sorteo" class="tab-btn whitespace-nowrap py-4 px-1 border-b-2 font-medium text-lg">Sorteo</button>
+                <button id="tab-clasificacion" data-view="clasificacion" class="tab-btn whitespace-nowrap py-4 px-1 border-b-2 font-medium text-lg">Clasificación Competición</button>
+                <button id="tab-regularidad" data-view="regularidad" class="tab-btn whitespace-nowrap py-4 px-1 border-b-2 font-medium text-lg">Clasificación Regularidad</button>
+            </nav>
+        </div>
+
+        <!-- Vista de Inicio -->
+        <div id="inicio-view" class="view-container">
+            <div class="bg-gray-800 p-6 rounded-2xl shadow-lg">
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4 gap-4">
+                    <h2 class="text-2xl font-bold">Plantilla de Socios</h2>
+                    <div class="flex flex-wrap gap-2">
+                        <button id="export-data-btn" class="bg-sky-600 hover:bg-sky-700 text-white font-bold py-2 px-4 rounded-lg transition-colors">Exportar Datos</button>
+                        <button id="import-data-btn" class="bg-amber-600 hover:bg-amber-700 text-white font-bold py-2 px-4 rounded-lg transition-colors">Importar Datos</button>
+                        <input type="file" id="import-file-input" class="hidden" accept=".json">
+                    </div>
+                </div>
+                 <div class="overflow-x-auto">
+                    <table class="w-full text-sm text-left text-gray-300">
+                        <thead class="text-xs text-gray-400 uppercase bg-gray-700">
+                            <tr>
+                                <th scope="col" class="p-3">Nombre</th>
+                                <th scope="col" class="p-3">Posición Habitual</th>
+                            </tr>
+                        </thead>
+                        <tbody id="inicio-table-body"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Vista de Plantilla Detallada -->
+        <div id="plantilla-view" class="view-container hidden">
+            <div class="bg-gray-800 p-6 rounded-2xl shadow-lg">
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4 gap-4">
+                    <h2 class="text-2xl font-bold">Gestión de Plantilla (<span id="socio-count">0</span>)</h2>
+                    <div class="flex flex-wrap gap-2">
+                        <button id="add-socio-btn" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-2 px-4 rounded-lg transition-colors">Añadir Socio</button>
+                    </div>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-sm text-left text-gray-300 table-fixed">
+                        <thead class="text-xs text-gray-400 uppercase bg-gray-700">
+                            <tr>
+                                <th scope="col" class="p-3 w-1/2 sm:w-48">Nombre</th>
+                                <th scope="col" class="p-3 w-32">Posición</th>
+                                <th scope="col" class="p-3 w-28">Calidad</th>
+                                <th scope="col" class="p-3 w-24 text-center">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="plantilla-table-body"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Vista de Sorteo por Jornadas -->
+        <div id="sorteo-view" class="view-container hidden">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                <!-- Columna de Jornadas -->
+                <div class="md:col-span-1 bg-gray-800 p-4 rounded-2xl shadow-lg">
+                    <h2 class="text-xl font-bold mb-4">Jornadas</h2>
+                    <button id="new-jornada-btn" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg mb-4 transition-colors">Nueva Jornada</button>
+                    <div id="jornadas-list" class="space-y-2 max-h-96 overflow-y-auto"></div>
+                </div>
+
+                <!-- Contenido Principal del Sorteo -->
+                <div class="md:col-span-3 bg-gray-800 p-6 rounded-2xl shadow-lg">
+                    <div id="jornada-placeholder" class="text-center text-gray-400">
+                        <p class="text-lg">Selecciona una jornada o crea una nueva.</p>
+                    </div>
+                    <div id="jornada-content" class="hidden">
+                        <div class="flex justify-between items-center mb-4">
+                            <h2 id="jornada-title" class="text-2xl font-bold"></h2>
+                            <button id="delete-jornada-btn" class="bg-red-600 hover:bg-red-700 text-white font-bold py-1 px-3 rounded-lg text-sm transition-colors">Eliminar Jornada</button>
+                        </div>
+                        <div id="jornada-workflow">
+                            <!-- Contenido dinámico del sorteo -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Vista de Clasificación Competición -->
+        <div id="clasificacion-view" class="view-container hidden">
+             <div class="bg-gray-800 p-6 rounded-2xl shadow-lg">
+                <h2 class="text-2xl font-bold mb-4">Clasificación de Competición</h2>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-sm text-left text-gray-300">
+                        <thead class="text-xs text-gray-400 uppercase bg-gray-700">
+                            <tr>
+                                <th scope="col" class="p-3 w-16 text-center">#</th>
+                                <th scope="col" class="p-3">Nombre</th>
+                                <th scope="col" class="p-3 w-24 text-center">Puntos</th>
+                                <th scope="col" class="p-3 w-24 text-center">P. Jugados</th>
+                                <th scope="col" class="p-3 w-24 text-center">Ganados</th>
+                                <th scope="col" class="p-3 w-24 text-center">Empatados</th>
+                                <th scope="col" class="p-3 w-24 text-center">Perdidos</th>
+                            </tr>
+                        </thead>
+                        <tbody id="clasificacion-table-body"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Vista de Clasificación Regularidad -->
+        <div id="regularidad-view" class="view-container hidden">
+             <div class="bg-gray-800 p-6 rounded-2xl shadow-lg">
+                <h2 class="text-2xl font-bold mb-4">Clasificación de Regularidad (por Penalización)</h2>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-sm text-left text-gray-300">
+                        <thead class="text-xs text-gray-400 uppercase bg-gray-700">
+                            <tr>
+                                <th scope="col" class="p-3 w-16 text-center">#</th>
+                                <th scope="col" class="p-3">Nombre</th>
+                                <th scope="col" class="p-3 w-48 text-center">Puntos de Penalización</th>
+                                <th scope="col" class="p-3 w-24 text-center">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="regularidad-table-body"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Modales -->
+        <div id="info-modal" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center hidden z-50 p-4">
+            <div class="bg-gray-800 rounded-lg p-8 shadow-2xl border max-w-sm text-center">
+                <h3 id="info-modal-title" class="text-2xl font-bold mb-4"></h3>
+                <p id="info-modal-message" class="text-gray-300 mb-6"></p>
+                <button id="info-modal-close-btn" class="text-white font-bold py-2 px-6 rounded-lg transition-colors">Entendido</button>
+            </div>
+        </div>
+
+        <div id="confirm-modal" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center hidden z-50 p-4">
+            <div class="bg-gray-800 rounded-lg p-8 shadow-2xl border border-yellow-500 max-w-sm text-center">
+                <h3 class="text-2xl font-bold text-yellow-400 mb-4">Confirmar Acción</h3>
+                <p id="confirm-modal-message" class="text-gray-300 mb-6"></p>
+                <div class="flex gap-4">
+                    <button id="confirm-cancel-btn" class="w-full bg-gray-600 hover:bg-gray-700 rounded-lg py-2">Cancelar</button>
+                    <button id="confirm-ok-btn" class="w-full bg-red-600 hover:bg-red-700 rounded-lg py-2">Confirmar</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="socio-modal" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center hidden z-50 p-4">
+            <div class="bg-gray-800 rounded-lg p-8 shadow-2xl border border-amber-500 max-w-lg w-full">
+                <h3 id="socio-modal-title" class="text-2xl font-bold text-amber-400 mb-6">Añadir Socio</h3>
+                <form id="socio-form" class="space-y-4">
+                    <input type="hidden" id="socioId">
+                    <div>
+                        <label for="socioName" class="block text-sm font-medium">Nombre</label>
+                        <input type="text" id="socioName" class="mt-1 w-full bg-gray-700 rounded-md" required>
+                    </div>
+                    <div>
+                        <label for="socioPosition" class="block text-sm font-medium">Posición</label>
+                        <select id="socioPosition" class="mt-1 w-full bg-gray-700 rounded-md">
+                            <option>Portero</option><option>Defensa</option><option selected>Centrocampista</option><option>Delantero</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="socioLevel" class="block text-sm font-medium">Nivel de Calidad</label>
+                        <select id="socioLevel" class="mt-1 w-full bg-gray-700 rounded-md">
+                            <option value="1">1 - Básico</option><option value="2">2 - Normal</option><option value="3" selected>3 - Bueno</option><option value="4">4 - Muy Bueno</option><option value="5">5 - Premium</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="socioIncompatibles" class="block text-sm font-medium">Incompatible con</label>
+                        <select id="socioIncompatibles" multiple class="mt-1 w-full h-32 bg-gray-700 rounded-md"></select>
+                    </div>
+                    <div class="flex gap-4 pt-4">
+                        <button type="button" id="cancel-socio-btn" class="w-full bg-gray-600 hover:bg-gray-700 rounded-lg py-2">Cancelar</button>
+                        <button type="submit" class="w-full bg-amber-600 hover:bg-amber-700 rounded-lg py-2">Guardar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div id="regularidad-modal" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center hidden z-50 p-4">
+            <div class="bg-gray-800 rounded-lg p-8 shadow-2xl border border-violet-500 max-w-2xl w-full">
+                <h3 id="regularidad-modal-title" class="text-2xl font-bold text-violet-400 mb-6">Editar Penalizaciones</h3>
+                <form id="regularidad-form">
+                    <input type="hidden" id="regularidadSocioId">
+                    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 text-sm max-h-[60vh] overflow-y-auto pr-2">
+                        <div><label for="pen-tarjetaAmarilla" class="block">T. Amarilla (2 Pts)</label><input type="number" id="pen-tarjetaAmarilla" min="0" value="0" class="mt-1 w-full bg-gray-700 rounded-md"></div>
+                        <div><label for="pen-faltaJustificada" class="block">F. Justificada (2 Pts)</label><input type="number" id="pen-faltaJustificada" min="0" value="0" class="mt-1 w-full bg-gray-700 rounded-md"></div>
+                        <div><label for="pen-llegadaTarde" class="block">Llegada Tarde (3 Pts)</label><input type="number" id="pen-llegadaTarde" min="0" value="0" class="mt-1 w-full bg-gray-700 rounded-md"></div>
+                        <div><label for="pen-avisoTardio" class="block">Aviso >22h Sáb. (4 Pts)</label><input type="number" id="pen-avisoTardio" min="0" value="0" class="mt-1 w-full bg-gray-700 rounded-md"></div>
+                        <div><label for="pen-faltaSinAvisar" class="block">F. Sin Avisar (5 Pts)</label><input type="number" id="pen-faltaSinAvisar" min="0" value="0" class="mt-1 w-full bg-gray-700 rounded-md"></div>
+                        <div><label for="pen-tarjetaRoja" class="block">T. Roja (5 Pts)</label><input type="number" id="pen-tarjetaRoja" min="0" value="0" class="mt-1 w-full bg-gray-700 rounded-md"></div>
+                        <div><label for="pen-abandonoJuego" class="block">Abandono Juego (5 Pts)</label><input type="number" id="pen-abandonoJuego" min="0" value="0" class="mt-1 w-full bg-gray-700 rounded-md"></div>
+                        <div><label for="pen-faltaImpidePartido" class="block">F. Impide Partido (6 Pts)</label><input type="number" id="pen-faltaImpidePartido" min="0" value="0" class="mt-1 w-full bg-gray-700 rounded-md"></div>
+                        <div><label for="pen-noAcatarDecision" class="block">No Acatar Decisión (7 Pts)</label><input type="number" id="pen-noAcatarDecision" min="0" value="0" class="mt-1 w-full bg-gray-700 rounded-md"></div>
+                        <div><label for="pen-danoMaterial" class="block">Daño Material (7 Pts)</label><input type="number" id="pen-danoMaterial" min="0" value="0" class="mt-1 w-full bg-gray-700 rounded-md"></div>
+                        <div><label for="pen-menosprecio" class="block">Menosprecio (10 Pts)</label><input type="number" id="pen-menosprecio" min="0" value="0" class="mt-1 w-full bg-gray-700 rounded-md"></div>
+                        <div class="col-span-full"><label for="pen-puntosExtra" class="block">Puntos Extra (Manual)</label><input type="number" id="pen-puntosExtra" min="0" value="0" class="mt-1 w-full bg-gray-700 rounded-md"></div>
+                    </div>
+                    <div class="flex gap-4 pt-6">
+                        <button type="button" id="cancel-regularidad-btn" class="w-full bg-gray-600 hover:bg-gray-700 rounded-lg py-2">Cancelar</button>
+                        <button type="submit" class="w-full bg-violet-600 hover:bg-violet-700 rounded-lg py-2">Guardar Penalizaciones</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Formation Modal -->
+        <div id="formation-modal" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center hidden z-50 p-4">
+            <div class="bg-gray-800 rounded-lg p-6 shadow-2xl border border-cyan-500 max-w-md w-full">
+                <div class="flex justify-between items-center mb-4">
+                    <h3 id="formation-modal-title" class="text-2xl font-bold text-cyan-400"></h3>
+                    <button id="close-formation-modal-btn" class="text-gray-400 hover:text-white">&times;</button>
+                </div>
+                <div id="formation-pitch-container"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // --- SELECTORES DEL DOM ---
+        const tabButtons = document.querySelectorAll('.tab-btn');
+        const viewContainers = document.querySelectorAll('.view-container');
+        
+        const exportDataBtn = document.getElementById('export-data-btn');
+        const importDataBtn = document.getElementById('import-data-btn');
+        const importFileInput = document.getElementById('import-file-input');
+        
+        const addSocioBtn = document.getElementById('add-socio-btn');
+        const plantillaTableBody = document.getElementById('plantilla-table-body');
+        const socioCountSpan = document.getElementById('socio-count');
+        const inicioTableBody = document.getElementById('inicio-table-body');
+
+        const jornadasListDiv = document.getElementById('jornadas-list');
+        const newJornadaBtn = document.getElementById('new-jornada-btn');
+        const jornadaPlaceholder = document.getElementById('jornada-placeholder');
+        const jornadaContent = document.getElementById('jornada-content');
+        const jornadaTitle = document.getElementById('jornada-title');
+        const jornadaWorkflow = document.getElementById('jornada-workflow');
+        const deleteJornadaBtn = document.getElementById('delete-jornada-btn');
+        
+        const clasificacionTableBody = document.getElementById('clasificacion-table-body');
+        const regularidadTableBody = document.getElementById('regularidad-table-body');
+        
+        const infoModal = document.getElementById('info-modal');
+        const infoModalCloseBtn = document.getElementById('info-modal-close-btn');
+
+        const confirmModal = document.getElementById('confirm-modal');
+        const confirmModalMessage = document.getElementById('confirm-modal-message');
+        const confirmCancelBtn = document.getElementById('confirm-cancel-btn');
+        const confirmOkBtn = document.getElementById('confirm-ok-btn');
+
+        const socioModal = document.getElementById('socio-modal');
+        const socioModalTitle = document.getElementById('socio-modal-title');
+        const socioForm = document.getElementById('socio-form');
+        const cancelSocioBtn = document.getElementById('cancel-socio-btn');
+        const socioIdInput = document.getElementById('socioId');
+        const socioNameInput = document.getElementById('socioName');
+        const socioPositionSelect = document.getElementById('socioPosition');
+        const socioLevelSelect = document.getElementById('socioLevel');
+        const socioIncompatiblesSelect = document.getElementById('socioIncompatibles');
+        
+        const regularidadModal = document.getElementById('regularidad-modal');
+        const regularidadModalTitle = document.getElementById('regularidad-modal-title');
+        const regularidadForm = document.getElementById('regularidad-form');
+        const cancelRegularidadBtn = document.getElementById('cancel-regularidad-btn');
+        const regularidadSocioIdInput = document.getElementById('regularidadSocioId');
+
+        const formationModal = document.getElementById('formation-modal');
+        const closeFormationModalBtn = document.getElementById('close-formation-modal-btn');
+        const formationModalTitle = document.getElementById('formation-modal-title');
+        const formationPitchContainer = document.getElementById('formation-pitch-container');
+        
+        // --- ESTADO DE LA APLICACIÓN ---
+        let state = {
+            socios: [],
+            jornadas: [],
+            activeJornadaId: null,
+        };
+        let confirmAction = null;
+
+        const initialSocios = [
+            "JUAN DE DIOS DE LUQUE JIMENEZ", "ENRIQUE PARDO DE LA FUENTE", "NICOLAS REYES ALVAREZ", "ESTEBAN FERNANDEZ PORCEL",
+            "JULIO MIGUEL GENTIL GARCIA", "GREGORIO HIDALGO FERNANDEZ", "FRANCISCO GALLEGO GOMEZ", "LUIS ALBERTO HURTADO SAMPEDRO",
+            "RAUL LACHICA MALDONADO", "PLACIDO PINOS FUNES", "ALEJANDRO SANCHEZ ROLDAN", "POPO", "ABEL GARCIA JUNCO", "PEDRO UREÑA ROZUA",
+            "ANTONIO BUENO FERNANDEZ", "RAMON DEL TORO MORENO", "DAVID ASENCIO GALIANO", "ALEJANDRO CABALLERO GARZON",
+            "FRANCISCO FERNANDEZ LOPEZ", "RAMIRO FUENTES PORCEL", "JOSE GOMEZ RODRIGUEZ", "LUIS JOSE ORIA GALVEZ", "DAVID CABALLERO FERNANDEZ",
+            "JESUS PORCEL CALLEJAS", "JOSE M. VALDIVIA QUESADA", "MIGUEL RUIZ SUAREZ", "JESUS MOCHON ANTEQUERA", "FERNANDO DIEZ CUESTA",
+            "ABRAHAM RAYA ROLDAN", "ANTONIO SANCHEZ GONZALEZ", "ALFONSO", "JOSE ANTONIO MARTIN BAZAN", "JESUS PORCEL RODRIGUEZ",
+            "MIGUEL A. VILLANUEVA LAGUANA", "DAVID RAMIRO (NUEVO)", "ILLORAS (NUEVO)", "ANTONIO PADRE SELVA (NUEVO)"
+        ];
+        const penaltyPointsMap = {
+            tarjetaAmarilla: 2, faltaJustificada: 2, llegadaTarde: 3, avisoTardio: 4,
+            faltaSinAvisar: 5, tarjetaRoja: 5, abandonoJuego: 5, faltaImpidePartido: 6,
+            noAcatarDecision: 7, danoMaterial: 7, menosprecio: 10, puntosExtra: 1
+        };
+
+        // --- FUNCIONES DE DATOS ---
+
+        function loadData() {
+            const data = localStorage.getItem('peñaData');
+            if (data) {
+                state = JSON.parse(data);
+                // Ensure new properties exist for all socios
+                state.socios.forEach(s => {
+                    if (!s.penalties) s.penalties = {};
+                    Object.keys(penaltyPointsMap).forEach(key => {
+                        if (s.penalties[key] === undefined) s.penalties[key] = 0;
+                    });
+                    if (s.hasBeenPico === undefined) s.hasBeenPico = false;
+                    if (!s.incompatibles) s.incompatibles = [];
+                });
+            } else {
+                state.socios = initialSocios.map((name, index) => {
+                    const penalties = {};
+                    Object.keys(penaltyPointsMap).forEach(key => penalties[key] = 0);
+                    return {
+                        id: index + 1,
+                        name: name,
+                        position: 'Centrocampista',
+                        level: 3,
+                        penalties: penalties,
+                        hasBeenPico: false,
+                        incompatibles: []
+                    };
+                });
+                saveData();
+            }
+            calculateAllCompetitionStats();
+            renderAllViews();
+        }
+
+        function saveData() {
+            calculateAllCompetitionStats(); // Recalculate stats before saving
+            localStorage.setItem('peñaData', JSON.stringify(state));
+            renderAllViews();
+        }
+
+        function calculateAllCompetitionStats() {
+            // Reset stats for all socios
+            state.socios.forEach(socio => {
+                socio.won = 0;
+                socio.drawn = 0;
+                socio.lost = 0;
+            });
+
+            // Recalculate from jornadas
+            state.jornadas.forEach(jornada => {
+                if (jornada.status !== 'completed') return;
+
+                // Tally points for players in teams
+                if (jornada.teams) {
+                    jornada.teams.forEach(team => {
+                        team.players.forEach(player => {
+                            const socio = state.socios.find(s => s.id === player.id);
+                            if (socio) {
+                                if (team.result === 3) socio.won++;
+                                else if (team.result === 1) socio.drawn++;
+                                else if (team.result === 0) socio.lost++;
+                            }
+                        });
+                    });
+                }
+                 // Tally points for the pico player
+                if (jornada.picoPlayerId) {
+                    const picoSocio = state.socios.find(s => s.id === jornada.picoPlayerId);
+                    if (picoSocio) {
+                        picoSocio.won++; // Pico always gets 3 points (1 win)
+                    }
+                }
+            });
+        }
+        
+        function renderAllViews() {
+            renderInicioTable();
+            renderPlantillaTable();
+            renderJornadasList();
+            renderActiveJornada();
+            renderClasificacionTable();
+            renderRegularidadTable();
+        }
+        
+        function showView(viewId) {
+            viewContainers.forEach(container => container.classList.add('hidden'));
+            document.getElementById(`${viewId}-view`).classList.remove('hidden');
+            tabButtons.forEach(btn => btn.classList.remove('tab-active'));
+            document.getElementById(`tab-${viewId}`).classList.add('tab-active');
+        }
+
+        // --- VISTAS ---
+        function renderInicioTable() {
+            inicioTableBody.innerHTML = '';
+            if (state.socios.length === 0) {
+                 inicioTableBody.innerHTML = '<tr><td colspan="2" class="p-4 text-center text-gray-500">No hay socios.</td></tr>';
+                 return;
+            }
+            [...state.socios].sort((a,b) => a.name.localeCompare(b.name)).forEach(socio => {
+                const row = `
+                    <tr class="bg-gray-800 border-b border-gray-700">
+                        <td class="p-3 font-medium">${socio.name}</td>
+                        <td class="p-3">${socio.position}</td>
+                    </tr>`;
+                inicioTableBody.innerHTML += row;
+            });
+        }
+
+        function renderPlantillaTable() {
+            plantillaTableBody.innerHTML = '';
+            socioCountSpan.textContent = state.socios.length;
+            if (state.socios.length === 0) {
+                 plantillaTableBody.innerHTML = '<tr><td colspan="4" class="p-4 text-center text-gray-500">No hay socios.</td></tr>';
+                 return;
+            }
+            [...state.socios].sort((a,b) => a.name.localeCompare(b.name)).forEach(socio => {
+                const levelMap = { 1: "Básico", 2: "Normal", 3: "Bueno", 4: "Muy Bueno", 5: "Premium" };
+                const row = `
+                    <tr class="bg-gray-800 border-b border-gray-700 hover:bg-gray-700/50">
+                        <td class="p-3 font-medium truncate">${socio.name}</td>
+                        <td class="p-3">${socio.position}</td>
+                        <td class="p-3">${levelMap[socio.level]}</td>
+                        <td class="p-3 text-center">
+                            <button data-id="${socio.id}" class="edit-btn p-1 text-sky-400 hover:text-sky-300">✏️</button>
+                            <button data-id="${socio.id}" class="delete-btn p-1 text-red-500 hover:text-red-400">🗑️</button>
+                        </td>
+                    </tr>`;
+                plantillaTableBody.innerHTML += row;
+            });
+        }
+
+        function renderClasificacionTable() {
+            clasificacionTableBody.innerHTML = '';
+            const rankedSocios = [...state.socios]
+                .map(s => ({
+                    ...s, 
+                    points: (s.won * 3) + s.drawn, 
+                    games: s.won + s.drawn + s.lost,
+                    penaltyPoints: calculatePenaltyPoints(s)
+                }))
+                .sort((a, b) => 
+                    b.won - a.won ||
+                    a.penaltyPoints - b.penaltyPoints ||
+                    a.name.localeCompare(b.name)
+                );
+
+            if (rankedSocios.length === 0) { clasificacionTableBody.innerHTML = '<tr><td colspan="7" class="p-4 text-center text-gray-500">No hay socios.</td></tr>'; return; }
+            
+            rankedSocios.forEach((socio, index) => {
+                const row = `
+                    <tr class="bg-gray-800 border-b border-gray-700">
+                        <td class="p-3 text-center font-bold ${index < 3 ? 'text-emerald-400' : ''}">${index + 1}</td>
+                        <td class="p-3 font-medium">${socio.name}</td>
+                        <td class="p-3 text-center font-bold text-emerald-400">${socio.points}</td>
+                        <td class="p-3 text-center">${socio.games}</td>
+                        <td class="p-3 text-center text-green-400">${socio.won}</td>
+                        <td class="p-3 text-center text-yellow-400">${socio.drawn}</td>
+                        <td class="p-3 text-center text-red-400">${socio.lost}</td>
+                    </tr>`;
+                clasificacionTableBody.innerHTML += row;
+            });
+        }
+        
+        function calculatePenaltyPoints(socio) {
+            return Object.keys(socio.penalties || {}).reduce((total, key) => total + (socio.penalties[key] || 0) * (penaltyPointsMap[key] || 0), 0);
+        }
+
+        function renderRegularidadTable() {
+            regularidadTableBody.innerHTML = '';
+            const rankedSocios = [...state.socios].map(s => ({...s, penaltyPoints: calculatePenaltyPoints(s)})).sort((a, b) => a.penaltyPoints - b.penaltyPoints || a.name.localeCompare(b.name));
+            if (rankedSocios.length === 0) { regularidadTableBody.innerHTML = '<tr><td colspan="4" class="p-4 text-center text-gray-500">No hay socios.</td></tr>'; return; }
+            rankedSocios.forEach((socio, index) => {
+                const row = `
+                    <tr class="bg-gray-800 border-b border-gray-700 hover:bg-gray-700/50">
+                        <td class="p-3 text-center font-bold ${index < 5 && socio.penaltyPoints === rankedSocios[0].penaltyPoints ? 'text-violet-400' : ''}">${index + 1}</td>
+                        <td class="p-3 font-medium">${socio.name}</td>
+                        <td class="p-3 text-center font-bold text-violet-400">${socio.penaltyPoints}</td>
+                        <td class="p-3 text-center"><button data-id="${socio.id}" class="edit-regularidad-btn p-1 text-sky-400 hover:text-sky-300">✏️</button></td>
+                    </tr>`;
+                regularidadTableBody.innerHTML += row;
+            });
+        }
+
+        // --- LÓGICA DE JORNADAS ---
+        function renderJornadasList() {
+            jornadasListDiv.innerHTML = '';
+            [...state.jornadas].sort((a, b) => b.id - a.id).forEach(jornada => {
+                const activeClass = jornada.id === state.activeJornadaId ? 'active' : '';
+                const item = `
+                    <div data-id="${jornada.id}" class="jornada-item p-3 rounded-lg cursor-pointer hover:bg-blue-500 transition-colors ${activeClass}">
+                        <p class="font-bold">${jornada.name}</p>
+                        <p class="text-xs text-gray-300">${new Date(jornada.date).toLocaleDateString()}</p>
+                    </div>`;
+                jornadasListDiv.innerHTML += item;
+            });
+        }
+        
+        function renderActiveJornada() {
+            const jornada = state.jornadas.find(j => j.id === state.activeJornadaId);
+            if (!jornada) {
+                jornadaContent.classList.add('hidden');
+                jornadaPlaceholder.classList.remove('hidden');
+                return;
+            }
+            jornadaPlaceholder.classList.add('hidden');
+            jornadaContent.classList.remove('hidden');
+            jornadaTitle.textContent = `${jornada.name} - ${new Date(jornada.date).toLocaleDateString()}`;
+            
+            if (jornada.status === 'completed') {
+                renderCompletedJornada(jornada);
+            } else {
+                renderPendingJornada(jornada);
+            }
+        }
+        
+        function renderPendingJornada(jornada) {
+             const convocados = jornada.convocados || [];
+             const playersHtml = [...state.socios].sort((a,b) => a.name.localeCompare(b.name)).map(socio => `
+                <label class="flex items-center space-x-3 p-2 rounded-md hover:bg-gray-600 cursor-pointer">
+                    <input type="checkbox" data-id="${socio.id}" class="sorteo-checkbox rounded" ${convocados.includes(socio.id) ? 'checked' : ''}>
+                    <span>${socio.name}</span>
+                </label>`).join('');
+
+            let picoHtml = '';
+            if (jornada.picoPlayerId) {
+                const picoPlayer = state.socios.find(s => s.id === jornada.picoPlayerId);
+                if (picoPlayer) {
+                    picoHtml = `
+                    <div class="mt-4 text-center bg-gray-900/50 p-3 rounded-lg">
+                        <span class="font-bold text-amber-400">PICO:</span> ${picoPlayer.name}
+                    </div>`;
+                }
+            }
+
+            jornadaWorkflow.innerHTML = `
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                    <div class="lg:col-span-1 bg-gray-700/50 p-4 rounded-lg">
+                        <h3 class="font-bold text-lg mb-2 text-cyan-400">1. Seleccionar Jugadores (<span id="j-convocados-count">${convocados.length}</span>)</h3>
+                        <div id="j-sorteo-player-selection" class="space-y-2 max-h-80 overflow-y-auto pr-2">${playersHtml}</div>
+                    </div>
+                    <div class="lg:col-span-2 space-y-6">
+                        <div class="bg-gray-700/50 p-4 rounded-lg">
+                            <h3 class="font-bold text-lg mb-2 text-cyan-400">2. Configurar Sorteo</h3>
+                            <label for="j-numTeams" class="block text-sm font-medium">Número de Equipos</label>
+                            <input type="number" id="j-numTeams" value="${jornada.numTeams || 2}" min="2" class="mt-1 w-full max-w-xs bg-gray-900 rounded-md">
+                            <button id="j-generate-teams-btn" class="mt-4 w-full sm:w-auto bg-cyan-600 hover:bg-cyan-700 font-bold py-2 px-6 rounded-lg" ${convocados.length === 0 ? 'disabled' : ''}>Generar Equipos</button>
+                            ${picoHtml}
+                        </div>
+                        <div id="j-teams-output-container" class="${jornada.teams ? '' : 'hidden'}">
+                             <h3 class="font-bold text-lg mb-2 text-cyan-400">Equipos Generados</h3>
+                            <div id="j-teams-output" class="grid grid-cols-1 md:grid-cols-2 gap-6"></div>
+                        </div>
+                        <div id="j-results-section" class="${jornada.teams ? '' : 'hidden'} bg-gray-700/50 p-4 rounded-lg">
+                            <h3 class="font-bold text-lg mb-4 text-emerald-400 text-center">3. Registrar Resultado</h3>
+                            <div id="j-results-input" class="flex flex-wrap justify-center gap-4"></div>
+                            <div class="text-center mt-6">
+                                <button id="j-save-results-btn" class="bg-emerald-600 hover:bg-emerald-700 font-bold py-2 px-6 rounded-lg">Finalizar y Guardar Resultados</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>`;
+            if(jornada.teams) {
+                renderTeamsUI(jornada.teams, 'j-teams-output');
+                renderResultsInputUI(jornada.teams, 'j-results-input');
+            }
+        }
+        
+        function renderCompletedJornada(jornada) {
+            let picoHtml = '';
+            if (jornada.picoPlayerId) {
+                const picoPlayer = state.socios.find(s => s.id === jornada.picoPlayerId);
+                if (picoPlayer) {
+                    picoHtml = `
+                    <div class="mb-4 text-center bg-gray-900/50 p-3 rounded-lg">
+                        <span class="font-bold text-amber-400">PICO:</span> ${picoPlayer.name} (<span class="text-green-400 font-bold">+3 Puntos</span>)
+                    </div>`;
+                }
+            }
+            jornadaWorkflow.innerHTML = `
+                <h3 class="font-bold text-lg mb-4 text-emerald-400">Jornada Finalizada</h3>
+                ${picoHtml}
+                <div id="j-teams-output" class="grid grid-cols-1 md:grid-cols-2 gap-6"></div>`;
+            renderTeamsUI(jornada.teams, 'j-teams-output', true);
+        }
+        
+        function renderTeamsUI(teams, outputDivId, isReadOnly = false) {
+            const teamsOutputDiv = document.getElementById(outputDivId);
+            teamsOutputDiv.innerHTML = '';
+            const colors = ['cyan', 'emerald', 'amber', 'sky', 'rose', 'indigo', 'lime', 'pink'];
+            
+            teams.forEach((team, index) => {
+                const color = colors[index % colors.length];
+                const teamCard = document.createElement('div');
+                teamCard.className = `bg-gray-700 p-4 rounded-lg shadow-md border-t-4 border-${color}-500`;
+                
+                const positionOrder = { 'Portero': 1, 'Defensa': 2, 'Centrocampista': 3, 'Delantero': 4 };
+                let playersHtml = '<ul class="space-y-1 mt-2">';
+                team.players.sort((a,b) => positionOrder[a.position] - positionOrder[b.position] || a.name.localeCompare(b.name))
+                    .forEach(p => { playersHtml += `<li class="text-sm"><span>${p.name}</span> <span class="text-gray-400 text-xs">(${p.position})</span></li>`; });
+                playersHtml += '</ul>';
+                
+                let resultHtml = '';
+                if (isReadOnly) {
+                    resultHtml = `<span class="text-2xl font-bold text-white">${team.score}</span>`;
+                } else {
+                    resultHtml = `<p class="text-sm"><span class="font-bold">${team.totalLevel}</span> Nvl | <span class="font-bold">${team.totalPoints}</span> Pts</p>`;
+                }
+
+                const formationButton = `<button data-team-index="${index}" class="view-formation-btn mt-4 text-sm bg-gray-600 hover:bg-gray-500 text-white font-bold py-1 px-3 rounded-lg transition-colors">Ver Formación</button>`;
+                
+                teamCard.innerHTML = `
+                    <div class="flex justify-between items-center">
+                        <h3 class="text-xl font-bold text-${color}-400">${team.name}</h3>
+                        <div class="text-right">${resultHtml}</div>
+                    </div>
+                    <hr class="my-2 border-gray-600">
+                    ${playersHtml}
+                    <div class="mt-2 text-right">${formationButton}</div>`;
+                teamsOutputDiv.appendChild(teamCard);
+            });
+        }
+        
+        function renderResultsInputUI(teams, resultsDivId) {
+            const resultsInputDiv = document.getElementById(resultsDivId);
+            if (!resultsInputDiv) return;
+
+            let inputsHtml = '<div class="flex flex-col sm:flex-row items-center justify-center gap-4 text-center">';
+            const colors = ['cyan', 'emerald', 'amber', 'sky', 'rose', 'indigo', 'lime', 'pink'];
+
+            teams.forEach((team, index) => {
+                const color = colors[index % colors.length];
+                inputsHtml += `
+                    <div class="flex items-center gap-2">
+                        <label for="score-team-${team.id}" class="font-bold text-${color}-400">${team.name}</label>
+                        <input type="number" id="score-team-${team.id}" data-team-id="${team.id}" min="0" class="score-input w-20 text-center bg-gray-900 border border-gray-600 rounded-md p-2" value="0">
+                    </div>
+                `;
+                if (index < teams.length - 1) {
+                    inputsHtml += `<span class="hidden sm:inline">-</span>`;
+                }
+            });
+            inputsHtml += '</div>';
+            resultsInputDiv.innerHTML = inputsHtml;
+        }
+
+        // --- MODALES Y FORMULARIOS ---
+        function openSocioModal(socio = null) {
+            socioForm.reset();
+            socioIncompatiblesSelect.innerHTML = '';
+            
+            const currentSocioId = socio ? socio.id : null;
+            // Populate incompatibles select
+            [...state.socios]
+                .filter(s => s.id !== currentSocioId)
+                .sort((a,b) => a.name.localeCompare(b.name))
+                .forEach(s => {
+                    const option = document.createElement('option');
+                    option.value = s.id;
+                    option.textContent = s.name;
+                    socioIncompatiblesSelect.appendChild(option);
+                });
+
+            if (socio) {
+                socioModalTitle.textContent = 'Editar Socio';
+                socioIdInput.value = socio.id;
+                socioNameInput.value = socio.name;
+                socioPositionSelect.value = socio.position;
+                socioLevelSelect.value = socio.level;
+                (socio.incompatibles || []).forEach(id => {
+                    const option = socioIncompatiblesSelect.querySelector(`option[value="${id}"]`);
+                    if (option) option.selected = true;
+                });
+            } else {
+                socioModalTitle.textContent = 'Añadir Socio';
+                socioIdInput.value = '';
+            }
+            socioModal.classList.remove('hidden');
+        }
+
+        function handleSocioFormSubmit(e) {
+            e.preventDefault();
+            const id = socioIdInput.value ? parseInt(socioIdInput.value) : null;
+            const name = socioNameInput.value.trim();
+            if (!name) { showInfoModal("El nombre no puede estar vacío."); return; }
+            
+            const selectedIncompatibles = Array.from(socioIncompatiblesSelect.selectedOptions).map(opt => parseInt(opt.value));
+
+            if (id) { // Editing
+                const socio = state.socios.find(s => s.id === id);
+                socio.name = name;
+                socio.position = socioPositionSelect.value;
+                socio.level = parseInt(socioLevelSelect.value);
+                socio.incompatibles = selectedIncompatibles;
+            } else { // Adding
+                const penalties = {};
+                Object.keys(penaltyPointsMap).forEach(key => penalties[key] = 0);
+                state.socios.push({
+                    id: Date.now(), name,
+                    position: socioPositionSelect.value,
+                    level: parseInt(socioLevelSelect.value),
+                    penalties: penalties,
+                    hasBeenPico: false,
+                    incompatibles: selectedIncompatibles
+                });
+            }
+            saveData();
+            socioModal.classList.add('hidden');
+        }
+
+        function handleDeleteSocio(id) {
+            showConfirmModal('¿Eliminar socio? Se borrará de todas las jornadas pasadas.', () => {
+                state.socios = state.socios.filter(s => s.id !== id);
+                // Also remove from any incompatibility lists
+                state.socios.forEach(s => {
+                    s.incompatibles = s.incompatibles.filter(incompatibleId => incompatibleId !== id);
+                });
+                state.jornadas.forEach(j => {
+                    if(j.convocados) j.convocados = j.convocados.filter(socioId => socioId !== id);
+                    if(j.teams) j.teams.forEach(t => t.players = t.players.filter(p => p.id !== id));
+                    if(j.picoPlayerId === id) j.picoPlayerId = null;
+                });
+                saveData();
+            });
+        }
+
+        function openRegularidadModal(socio) {
+            regularidadForm.reset();
+            regularidadSocioIdInput.value = socio.id;
+            regularidadModalTitle.textContent = `Editar Penalizaciones de ${socio.name}`;
+            for (const key in socio.penalties) {
+                const input = document.getElementById(`pen-${key}`);
+                if (input) input.value = socio.penalties[key] || 0;
+            }
+            regularidadModal.classList.remove('hidden');
+        }
+        
+        function handleRegularidadFormSubmit(e) {
+            e.preventDefault();
+            const id = parseInt(regularidadSocioIdInput.value);
+            const socio = state.socios.find(s => s.id === id);
+            if (socio) {
+                for (const key in penaltyPointsMap) {
+                    const input = document.getElementById(`pen-${key}`);
+                    if (input) socio.penalties[key] = parseInt(input.value) || 0;
+                }
+                saveData();
+            }
+            regularidadModal.classList.add('hidden');
+        }
+        
+        // --- IMPORT/EXPORT ---
+        function exportData() {
+            const dataStr = JSON.stringify(state, null, 2);
+            const dataBlob = new Blob([dataStr], {type: "application/json"});
+            const url = URL.createObjectURL(dataBlob);
+            const link = document.createElement('a');
+            link.download = `datos_peña_${new Date().toISOString().split('T')[0]}.json`;
+            link.href = url;
+            link.click();
+            URL.revokeObjectURL(url);
+        }
+
+        function importData(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                try {
+                    const importedState = JSON.parse(e.target.result);
+                    if (!importedState.socios || !importedState.jornadas) { throw new Error("Formato de datos no válido."); }
+                    
+                    showConfirmModal("¿Reemplazar todos los datos actuales con los del archivo?", () => {
+                        state = importedState;
+                        saveData();
+                        showInfoModal("¡Datos importados con éxito!", "success");
+                    });
+
+                } catch (error) { showInfoModal("Error al leer el archivo. " + error.message);
+                } finally { importFileInput.value = ''; }
+            };
+            reader.readAsText(file);
+        }
+
+        function showInfoModal(message, type = 'error') {
+            const title = document.getElementById('info-modal-title');
+            const text = document.getElementById('info-modal-message');
+            const button = document.getElementById('info-modal-close-btn');
+            const borderDiv = infoModal.querySelector('.border');
+
+            text.textContent = message;
+
+            // Reset classes
+            borderDiv.classList.remove('border-red-500', 'border-green-500', 'border-yellow-500');
+            title.classList.remove('text-red-500', 'text-green-500', 'text-yellow-500');
+            button.classList.remove('bg-red-600', 'hover:bg-red-700', 'bg-green-600', 'hover:bg-green-700', 'bg-yellow-600', 'hover:bg-yellow-700');
+
+            if (type === 'success') {
+                title.textContent = 'Éxito';
+                title.classList.add('text-green-500');
+                borderDiv.classList.add('border-green-500');
+                button.classList.add('bg-green-600', 'hover:bg-green-700');
+            } else if (type === 'warning') {
+                title.textContent = 'Aviso';
+                title.classList.add('text-yellow-500');
+                borderDiv.classList.add('border-yellow-500');
+                button.classList.add('bg-yellow-600', 'hover:bg-yellow-700');
+            } else { // 'error'
+                title.textContent = 'Error';
+                title.classList.add('text-red-500');
+                borderDiv.classList.add('border-red-500');
+                button.classList.add('bg-red-600', 'hover:bg-red-700');
+            }
+            infoModal.classList.remove('hidden');
+        }
+
+        function showConfirmModal(message, onConfirm) {
+            confirmModalMessage.textContent = message;
+            confirmAction = onConfirm;
+            confirmModal.classList.remove('hidden');
+        }
+        
+        // --- EVENT LISTENERS ---
+        tabButtons.forEach(button => button.addEventListener('click', () => showView(button.dataset.view)));
+        addSocioBtn.addEventListener('click', () => openSocioModal());
+        cancelSocioBtn.addEventListener('click', () => socioModal.classList.add('hidden'));
+        socioForm.addEventListener('submit', handleSocioFormSubmit);
+
+        plantillaTableBody.addEventListener('click', (e) => {
+            if (e.target.closest('.edit-btn')) openSocioModal(state.socios.find(s => s.id === parseInt(e.target.closest('.edit-btn').dataset.id)));
+            if (e.target.closest('.delete-btn')) handleDeleteSocio(parseInt(e.target.closest('.delete-btn').dataset.id));
+        });
+
+        regularidadTableBody.addEventListener('click', (e) => {
+            if (e.target.closest('.edit-regularidad-btn')) openRegularidadModal(state.socios.find(s => s.id === parseInt(e.target.closest('.edit-regularidad-btn').dataset.id)));
+        });
+        cancelRegularidadBtn.addEventListener('click', () => regularidadModal.classList.add('hidden'));
+        regularidadForm.addEventListener('submit', handleRegularidadFormSubmit);
+        
+        exportDataBtn.addEventListener('click', exportData);
+        importDataBtn.addEventListener('click', () => importFileInput.click());
+        importFileInput.addEventListener('change', importData);
+
+        infoModalCloseBtn.addEventListener('click', () => infoModal.classList.add('hidden'));
+
+        confirmCancelBtn.addEventListener('click', () => {
+            confirmModal.classList.add('hidden');
+            confirmAction = null;
+        });
+
+        confirmOkBtn.addEventListener('click', () => {
+            if (confirmAction) {
+                confirmAction();
+            }
+            confirmModal.classList.add('hidden');
+            confirmAction = null;
+        });
+
+        closeFormationModalBtn.addEventListener('click', () => formationModal.classList.add('hidden'));
+
+        // Jornada Listeners
+        newJornadaBtn.addEventListener('click', () => {
+            const newId = Date.now();
+            state.jornadas.push({
+                id: newId,
+                name: `Jornada ${state.jornadas.length + 1}`,
+                date: new Date().toISOString(),
+                status: 'pending',
+                convocados: [],
+                teams: null,
+                picoPlayerId: null
+            });
+            state.activeJornadaId = newId;
+            saveData();
+        });
+
+        jornadasListDiv.addEventListener('click', e => {
+            const jornadaItem = e.target.closest('.jornada-item');
+            if(jornadaItem) {
+                state.activeJornadaId = parseInt(jornadaItem.dataset.id);
+                renderJornadasList();
+                renderActiveJornada();
+            }
+        });
+        
+        deleteJornadaBtn.addEventListener('click', () => {
+            showConfirmModal('¿Eliminar esta jornada? Esta acción no se puede deshacer.', () => {
+                state.jornadas = state.jornadas.filter(j => j.id !== state.activeJornadaId);
+                state.activeJornadaId = null;
+                saveData();
+            });
+        });
+        
+        jornadaWorkflow.addEventListener('change', e => {
+            if (e.target.classList.contains('sorteo-checkbox')) {
+                const jornada = state.jornadas.find(j => j.id === state.activeJornadaId);
+                const id = parseInt(e.target.dataset.id);
+                if (e.target.checked) {
+                    if (!jornada.convocados.includes(id)) jornada.convocados.push(id);
+                } else {
+                    jornada.convocados = jornada.convocados.filter(socioId => socioId !== id);
+                }
+                document.getElementById('j-convocados-count').textContent = jornada.convocados.length;
+                document.getElementById('j-generate-teams-btn').disabled = jornada.convocados.length === 0;
+            }
+        });
+
+        jornadaWorkflow.addEventListener('click', e => {
+            const jornada = state.jornadas.find(j => j.id === state.activeJornadaId);
+            if(!jornada) return;
+            
+            const formationBtn = e.target.closest('.view-formation-btn');
+            if (formationBtn) {
+                const teamIndex = parseInt(formationBtn.dataset.teamIndex);
+                const team = jornada.teams[teamIndex];
+                if (team) {
+                    renderFormationModal(team);
+                }
+            }
+
+            if(e.target.id === 'j-generate-teams-btn') {
+                const numTeams = parseInt(document.getElementById('j-numTeams').value);
+                const convocados = state.socios.filter(s => jornada.convocados.includes(s.id));
+                let playersForDraw = [...convocados];
+                jornada.picoPlayerId = null;
+                jornada.brokenIncompatibilities = [];
+
+                if (convocados.length % 2 !== 0 && numTeams === 2) {
+                    let picoCandidates = convocados.filter(s => !s.hasBeenPico);
+                    if (picoCandidates.length === 0) {
+                         convocados.forEach(convocado => {
+                            const socioInState = state.socios.find(s => s.id === convocado.id);
+                            if (socioInState) socioInState.hasBeenPico = false;
+                        });
+                        picoCandidates = [...convocados];
+                    }
+
+                    const picoPlayer = picoCandidates[Math.floor(Math.random() * picoCandidates.length)];
+                    jornada.picoPlayerId = picoPlayer.id;
+                    const socioInState = state.socios.find(s => s.id === picoPlayer.id);
+                    if (socioInState) socioInState.hasBeenPico = true;
+                    
+                    playersForDraw = convocados.filter(s => s.id !== picoPlayer.id);
+                }
+                
+
+                if(playersForDraw.length < numTeams) { 
+                    showInfoModal(`No hay suficientes jugadores (${playersForDraw.length}) para ${numTeams} equipos.`); 
+                    jornada.picoPlayerId = null; // Revert
+                    return;
+                }
+                
+                const positionOrder = ['Portero', 'Defensa', 'Centrocampista', 'Delantero'];
+                const positionGroups = { Portero: [], Defensa: [], Centrocampista: [], Delantero: [] };
+                playersForDraw.forEach(p => {
+                    if (positionGroups[p.position]) {
+                        positionGroups[p.position].push(p);
+                    }
+                });
+
+                if (positionGroups.Portero.length > numTeams) {
+                    showInfoModal(`No se pueden generar equipos. Hay más porteros (${positionGroups.Portero.length}) que equipos (${numTeams}).`);
+                    return;
+                }
+
+                let teams = Array.from({ length: numTeams }, (_, i) => ({ 
+                    id: i, name: `Equipo ${i + 1}`, players: [], totalLevel: 0, totalPoints: 0, result: null, score: 0,
+                    positionCount: { Portero: 0, Defensa: 0, Centrocampista: 0, Delantero: 0 },
+                    positionLevel: { Portero: 0, Defensa: 0, Centrocampista: 0, Delantero: 0 }
+                }));
+                
+                function isCompatible(player, team) {
+                    for (const teamPlayer of team.players) {
+                        const teamPlayerFull = state.socios.find(s => s.id === teamPlayer.id);
+                        if ((player.incompatibles || []).includes(teamPlayer.id) || (teamPlayerFull.incompatibles || []).includes(player.id)) {
+                            return false;
+                        }
+                    }
+                    return true;
+                }
+                
+                let brokenIncompatibilities = [];
+
+                for (const position of positionOrder) {
+                    const playersInPosition = positionGroups[position].sort((a, b) => b.level - a.level);
+
+                    for (const player of playersInPosition) {
+                        teams.sort((a, b) => {
+                            // 1. Prioritize teams with fewer players overall
+                            const sizeDiff = a.players.length - b.players.length;
+                            if (sizeDiff !== 0) return sizeDiff;
+                            
+                            // 2. Compatibility
+                            const aIsCompatible = isCompatible(player, a);
+                            const bIsCompatible = isCompatible(player, b);
+                            if (aIsCompatible && !bIsCompatible) return -1;
+                            if (!aIsCompatible && bIsCompatible) return 1;
+                            
+                            // 3. Positional count
+                            const posCountDiff = a.positionCount[position] - b.positionCount[position];
+                            if (posCountDiff !== 0) return posCountDiff;
+
+                            // 4. Positional level balance
+                            const posLevelDiff = a.positionLevel[position] - b.positionLevel[position];
+                            if (posLevelDiff !== 0) return posLevelDiff;
+
+                            // 5. Overall balance
+                            const balanceA = a.totalLevel + a.totalPoints / 3;
+                            const balanceB = b.totalLevel + b.totalPoints / 3;
+                            return balanceA - balanceB;
+                        });
+
+                        const chosenTeam = teams[0];
+
+                        if (!isCompatible(player, chosenTeam)) {
+                            const incompatibleTeammates = chosenTeam.players.filter(p => {
+                                const teamPlayerFull = state.socios.find(s => s.id === p.id);
+                                return (player.incompatibles || []).includes(p.id) || (teamPlayerFull.incompatibles || []).includes(player.id);
+                            });
+                            incompatibleTeammates.forEach(teammate => {
+                                const pair = [player.name, teammate.name].sort().join(' y ');
+                                if (!brokenIncompatibilities.includes(pair)) {
+                                    brokenIncompatibilities.push(pair);
+                                }
+                            });
+                        }
+                        
+                        const socioData = state.socios.find(s => s.id === player.id);
+                        const points = (socioData.won * 3) + socioData.drawn;
+                        chosenTeam.players.push({id: player.id, name: player.name, position: player.position});
+                        chosenTeam.totalLevel += player.level;
+                        chosenTeam.totalPoints += points;
+                        chosenTeam.positionCount[player.position]++;
+                        chosenTeam.positionLevel[player.position] += player.level;
+                    }
+                }
+
+                jornada.teams = teams;
+                jornada.brokenIncompatibilities = brokenIncompatibilities;
+                renderActiveJornada();
+
+                if (jornada.brokenIncompatibilities.length > 0) {
+                    const message = "Se han ignorado las siguientes incompatibilidades para poder formar los equipos: " + jornada.brokenIncompatibilities.join(', ') + ".";
+                    showInfoModal(message, 'warning');
+                }
+            }
+
+            if(e.target.id === 'j-save-results-btn') {
+                let scoresValid = true;
+                jornada.teams.forEach(team => {
+                    const input = jornadaWorkflow.querySelector(`#score-team-${team.id}`);
+                    if (!input || input.value === '' || isNaN(parseInt(input.value)) || parseInt(input.value) < 0) {
+                        scoresValid = false;
+                    }
+                    if(input) team.score = parseInt(input.value);
+                });
+
+                if (!scoresValid) {
+                    showInfoModal("Debes introducir un resultado numérico válido y no negativo para cada equipo.");
+                    return;
+                }
+
+                const maxScore = Math.max(...jornada.teams.map(t => t.score));
+                const winners = jornada.teams.filter(t => t.score === maxScore);
+                const allScoresSame = new Set(jornada.teams.map(t => t.score)).size === 1;
+
+                if (allScoresSame) {
+                    jornada.teams.forEach(t => t.result = 1); // Universal draw
+                } else if (winners.length === 1) {
+                    jornada.teams.forEach(t => t.result = (t.id === winners[0].id) ? 3 : 0); // Single winner
+                } else {
+                    showInfoModal("El resultado no es coherente. Debe haber un único equipo ganador, o todos los equipos deben empatar con el mismo resultado.");
+                    jornada.teams.forEach(t => t.result = null);
+                    return;
+                }
+                
+                jornada.status = 'completed';
+                saveData();
+                showInfoModal("Jornada guardada y estadísticas actualizadas!", "success");
+            }
+        });
+        
+        // --- FORMATION MODAL ---
+        function renderFormationModal(team) {
+            const positions = {
+                Portero: [],
+                Defensa: [],
+                Centrocampista: [],
+                Delantero: [],
+            };
+
+            team.players.forEach(p => {
+                if(positions[p.position]) {
+                    positions[p.position].push(p);
+                }
+            });
+
+            const formationString = [
+                positions.Defensa.length,
+                positions.Centrocampista.length,
+                positions.Delantero.length
+            ].filter(n => n > 0).join('-');
+
+            formationModalTitle.textContent = `${team.name} (Formación ${formationString})`;
+
+            const createLine = (players) => {
+                const lineDiv = document.createElement('div');
+                lineDiv.className = 'formation-line';
+                players.forEach(p => {
+                    const puck = document.createElement('div');
+                    puck.className = 'player-puck';
+                    puck.textContent = p.name.split(' ').map(n => n[0]).join('').substring(0,2);
+                    puck.title = p.name;
+                    lineDiv.appendChild(puck);
+                });
+                return lineDiv;
+            }
+
+            formationPitchContainer.innerHTML = `
+                <div class="pitch">
+                    <div class="pitch-line absolute top-0 bottom-0 left-1/2 -translate-x-1/2"></div>
+                    <div class="center-circle"></div>
+                </div>
+            `;
+            const pitch = formationPitchContainer.querySelector('.pitch');
+            
+            // Goalkeeper
+            if (positions.Portero.length > 0) {
+                pitch.appendChild(createLine(positions.Portero));
+            }
+
+            // Other lines are drawn in reverse order for correct visual layout
+            const linesInOrder = ['Defensa', 'Centrocampista', 'Delantero'].filter(pos => positions[pos].length > 0);
+            linesInOrder.forEach(pos => {
+                pitch.appendChild(createLine(positions[pos]));
+            });
+
+            formationModal.classList.remove('hidden');
+        }
+
+        // --- INICIALIZACIÓN ---
+        loadData();
+        showView('inicio');
+    });
+    </script>
+</body>
+</html>
+
